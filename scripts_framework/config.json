@@ -1,0 +1,13 @@
+{
+    "enabled_modules": {
+        "oob_uploader": {"enabled": true, "schedule": "11:30", "days": ["Mon"]},
+        "batch_uploader": {"enabled": true, "schedule": "08:10", "days": ["Mon"]},
+        "great_deals": {"enabled": false, "schedule": "08:30", "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]},
+        "black_friday": {"enabled": false, "schedule": "08:31", "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]},
+        "ofd_tracker": {"enabled": true, "schedule": "08:45", "days": ["Mon"]},
+        "daily_sales_by_dep" : {"enabled" : true, "schedule" : "08:15", "days" : ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]},
+        "bomb_checker": {"enabled": false, "schedule": "08:35", "days": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]},
+        "headline": {"enabled": true, "schedule": "07:30", "days": ["Mon"]},
+        "ai_data_getter" : {"enabled" : false, "schedule" : "07:25", "days" : ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]}
+    }
+}

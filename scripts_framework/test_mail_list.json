@@ -1,0 +1,46 @@
+{
+    "enabled_modules": {
+        "oob_uploader": {
+            "enabled" : true,
+            "sender_mail": ["patrik.major@tesco.com"], 
+            "receiver_mail" : [""], 
+            "cc_mail" : ["patrik.major@tesco.com"]
+        },
+        "batch_uploader": {
+            "enabled" : true,
+            "sender_mail": ["patrik.major@tesco.com"], 
+            "receiver_mail" : [""], 
+            "cc_mail" : ["patrik.major@tesco.com"]
+        },
+        "great_deals": {
+            "enabled" : true,
+            "sender_mail": ["patrik.major@tesco.com"], 
+            "receiver_mail" : [""], 
+            "cc_mail" : [""]
+        },
+        "black_friday": {
+            "enabled" : true,
+            "sender_mail": ["patrik.major@tesco.com"], 
+            "receiver_mail" : [""],
+            "cc_mail" : ["patrik.major@tesco.com"]
+        },
+        "ofd_tracker": {
+            "enabled" : false,
+            "sender_mail": ["patrik.major@tesco.com"], 
+            "receiver_mail" : [""], 
+            "cc_mail" : [""]
+        },
+        "bomb_checker": {
+            "enabled" : false,
+            "sender_mail": ["patrik.major@tesco.com"], 
+            "receiver_mail" : [""], 
+            "cc_mail" : [""]
+        },
+        "headline": {
+            "enabled" : true,
+            "sender_mail": ["patrik.major@tesco.com"], 
+            "receiver_mail" : [""], 
+            "cc_mail" : ["patrik.major@tesco.com"]
+        }
+    }
+}
