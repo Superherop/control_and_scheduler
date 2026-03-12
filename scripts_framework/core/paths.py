@@ -24,6 +24,7 @@ def get_path(key: str) -> str:
         "OFD_TRACKER_PATH": fr"{sharepoint}\OFD Tracker",
         "DAILY_SALES_BY_DEP" : fr"{sharepoint}\DailySalesbyDep",
         "headline_path": fr"{onedrive}\Business Planning\automatization\GM Weekly Book\headline_comments.xlsx",
+        "small_store_tracker_path" : fr"{onedrive}\Business Planning\automatization\ControlPanel_script_runner\framework_assets\1k_stores",
         "ONEDRIVE": onedrive,
         "SHAREPOINT": sharepoint,
         "SHAREDRIVE": sharedrive,    
@@ -58,3 +59,4 @@ headline_path = get_path("headline_path")
 ONEDRIVE = get_path("ONEDRIVE")
 SHAREPOINT = get_path("SHAREPOINT")
 SHAREDRIVE = get_path("SHAREDRIVE")
+small_store_tracker_path = get_path("small_store_tracker_path") 

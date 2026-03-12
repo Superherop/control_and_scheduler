@@ -148,6 +148,7 @@ def read_and_process_file(file_path, sheet_name, columns, header, dtype=None):
 
 def excel_tpn_integer_konverzio(fajl_nev, sheet_name: Union[int, str], konvertalas=True) -> pd.DataFrame:
     """
+    Fájlból történő beolvasás esetére
     TPN oszlopok beolvasása és opcionális integer konverziója.
     
     Paraméterek:
@@ -183,3 +184,26 @@ def excel_tpn_integer_konverzio(fajl_nev, sheet_name: Union[int, str], konvertal
             print(f"  Sikeres! Típus: {df[col].dtype}")
     
     return df
+
+def conv(df, col_hint, alias_suffix='_ALIAS', inplace=True):
+    """Biztonságos integer konverzió minden olyan oszlopra, aminek a neve tartalmazza a col_hint-et (alapból: 'TPN').
+    - col_hint -> a keresett string
+    - Case-insensitive (pl. 'tpn', 'TPNB', 'Master TPN', 'LM_TPND')
+    - Nem dropna-zik (index-biztos)
+    - Nullable int: Int64
+    """
+    target = df if inplace else df.copy()
+
+    # oszlopok kiválasztása: név tartalmazza a "TPN"-t (case-insensitive)
+    tpn_cols = [c for c in target.columns if col_hint.lower() in str(c).lower()]
+
+    for col in tpn_cols:
+        alias_col = f"{col}{alias_suffix}"
+
+        target[alias_col] = target[col].astype(str).str.strip()
+        target[alias_col] = target[alias_col].replace({'': pd.NA, 'nan': pd.NA, 'None': pd.NA})
+        target[col] = pd.to_numeric(target[alias_col], errors='coerce').astype('Int64')
+
+        target.drop(columns=[alias_col], inplace=True)
+
+    return target
